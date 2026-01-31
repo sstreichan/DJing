@@ -15,6 +15,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -38,18 +41,18 @@ jobs:
       - name: Run semantic-release (version, changelog, release)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release
+        run: bunx semantic-release
 
       - name: Build site (bun)
         run: bun run build
 
-      - name: Deploy to GitHub Pages
+      - name: Configure GitHub Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact to Pages
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
       - name: Publish Pages
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
