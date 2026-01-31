@@ -29,18 +29,25 @@ jobs:
 
       - name: Configure registry auth
         run: |
-          echo "registry=${{ secrets.NPM_REPO }}" > ~/.npmrc
-          repo_host=$(echo "${{ secrets.NPM_REPO }}" | sed -E 's#https?://##; s#/$##')
-          echo "//${repo_host}/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
-          echo "//${repo_host}/repository/npm-private/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
-          echo "//${repo_host}/repository/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+          # Don't override the public registry. Only add auth entries for private hosts
+          # so public packages continue to resolve from the npm registry.
+          if [ -n "${{ secrets.NPM_REPO }}" ]; then
+            repo_host=$(echo "${{ secrets.NPM_REPO }}" | sed -E 's#https?://##; s#/$##')
+            echo "//${repo_host}/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+            # Some registries expose scoped paths — add common variants if needed.
+            echo "//${repo_host}/repository/npm-private/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc || true
+            echo "//${repo_host}/repository/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc || true
+          fi
           if [ -n "${{ secrets.NPM_REPO_ALT }}" ]; then
             alt_host=$(echo "${{ secrets.NPM_REPO_ALT }}" | sed -E 's#https?://##; s#/$##')
             echo "//${alt_host}/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
-            echo "//${alt_host}/repository/npm-private/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
-            echo "//${alt_host}/repository/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+            echo "//${alt_host}/repository/npm-private/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc || true
+            echo "//${alt_host}/repository/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc || true
           fi
-          echo "always-auth=true" >> ~/.npmrc
+          # only set always-auth when private registry entries exist
+          if grep -q ':_authToken' ~/.npmrc 2>/dev/null; then
+            echo "always-auth=true" >> ~/.npmrc
+          fi
 
       - name: Install dependencies (bun)
         run: |
