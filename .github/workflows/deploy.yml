@@ -31,7 +31,13 @@ jobs:
         run: |
           echo "registry=${{ secrets.NPM_REPO }}" > ~/.npmrc
           repo_host=$(echo "${{ secrets.NPM_REPO }}" | sed -E 's#https?://##; s#/$##')
-          echo "//${repo_host}/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+          echo "//${repo_host}/repository/npm-private/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+          echo "//${repo_host}/repository/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+          if [ -n "${{ secrets.NPM_REPO_ALT }}" ]; then
+            alt_host=$(echo "${{ secrets.NPM_REPO_ALT }}" | sed -E 's#https?://##; s#/$##')
+            echo "//${alt_host}/repository/npm-private/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+            echo "//${alt_host}/repository/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+          fi
           echo "always-auth=true" >> ~/.npmrc
 
       - name: Install dependencies (bun)
