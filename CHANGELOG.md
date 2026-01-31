@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/sstreichan/DJing/compare/v1.0.1...v1.1.0) (2026-01-31)
+
+
+### Features
+
+* add DJ-themed design (custom CSS, logo, hero, and updated SVG diagrams) ([#4](https://github.com/sstreichan/DJing/issues/4)) ([42de131](https://github.com/sstreichan/DJing/commit/42de1312d271a8d4b202dabc48f2622f47b72ec6))
+
 ## [1.0.1](https://github.com/sstreichan/DJing/compare/v1.0.0...v1.0.1) (2026-01-31)
 
 
