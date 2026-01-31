@@ -1,0 +1,58 @@
+<svg width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient Definitions - Brighter for Dark Mode -->
+  <defs>
+    <linearGradient id="purpleGradientDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c77dff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0aaff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="vinylGradientDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c77dff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#9d4edd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7b2cbf;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Vinyl Record -->
+  <g id="vinyl">
+    <!-- Outer circle -->
+    <circle cx="24" cy="24" r="20" fill="url(#vinylGradientDark)" opacity="0.95"/>
+    
+    <!-- Grooves -->
+    <circle cx="24" cy="24" r="18" fill="none" stroke="#0d0221" stroke-width="0.5" opacity="0.4"/>
+    <circle cx="24" cy="24" r="16" fill="none" stroke="#0d0221" stroke-width="0.5" opacity="0.4"/>
+    <circle cx="24" cy="24" r="14" fill="none" stroke="#0d0221" stroke-width="0.5" opacity="0.4"/>
+    
+    <!-- Label (center) -->
+    <circle cx="24" cy="24" r="8" fill="#190d33" opacity="0.8"/>
+    
+    <!-- Center hole -->
+    <circle cx="24" cy="24" r="2.5" fill="#0d0221"/>
+  </g>
+  
+  <!-- Tone Arm -->
+  <g id="tonearm">
+    <!-- Arm base -->
+    <circle cx="42" cy="6" r="2.5" fill="url(#purpleGradientDark)"/>
+    
+    <!-- Arm -->
+    <path d="M 42 6 L 36 18 L 32 22" 
+          stroke="url(#purpleGradientDark)" 
+          stroke-width="2.5" 
+          stroke-linecap="round" 
+          fill="none"/>
+    
+    <!-- Needle/Cartridge -->
+    <circle cx="32" cy="22" r="1.8" fill="#f72585"/>
+  </g>
+  
+  <!-- Text: DJ-Anleitung -->
+  <g id="text">
+    <text x="54" y="32" 
+          font-family="'Inter', sans-serif" 
+          font-size="22" 
+          font-weight="700" 
+          fill="url(#purpleGradientDark)">
+      DJ-Anleitung
+    </text>
+  </g>
+</svg>
