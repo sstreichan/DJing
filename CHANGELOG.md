@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/sstreichan/DJing/compare/v1.1.0...v1.2.0) (2026-01-31)
+
+
+### Features
+
+* update logo and styles with vibrant blue/orange theme for DJ guide ([b0d3f6f](https://github.com/sstreichan/DJing/commit/b0d3f6ff4be21283628f7f94261d47247d113750))
+
 # [1.1.0](https://github.com/sstreichan/DJing/compare/v1.0.1...v1.1.0) (2026-01-31)
 
 
