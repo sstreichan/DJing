@@ -1,0 +1,58 @@
+name: Deploy to GitHub Pages & Release
+
+on:
+  push:
+    branches: [ master ]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  release-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Configure registry auth
+        run: |
+          echo "registry=${{ secrets.NPM_REPO }}" > ~/.npmrc
+          repo_host=$(echo "${{ secrets.NPM_REPO }}" | sed -E 's#https?://##; s#/$##')
+          echo "//${repo_host}/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+          echo "always-auth=true" >> ~/.npmrc
+
+      - name: Install dependencies (bun)
+        run: |
+          bun install
+
+      - name: Run semantic-release (version, changelog, release)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bunx semantic-release
+
+      - name: Build site (bun)
+        run: bun run build
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact to Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      - name: Publish Pages
+        uses: actions/deploy-pages@v4

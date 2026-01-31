@@ -1,5 +1,9 @@
 # Astro Starter Kit: Basics
 
+[![Deploy Status](https://github.com/sstreichan/DJing/actions/workflows/deploy.yml/badge.svg)](https://github.com/sstreichan/DJing/actions/workflows/deploy.yml)
+
+Live site: https://sstreichan.github.io/DJing/
+
 ```sh
 bun create astro@latest -- --template basics
 ```
