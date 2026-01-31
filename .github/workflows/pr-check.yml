@@ -13,23 +13,25 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
       - name: Configure registry auth
         run: |
-          echo "registry=${{ secrets.NPM_REPO }}" > ~/.npmrc
-          repo_host=$(echo "${{ secrets.NPM_REPO }}" | sed -E 's#https?://##; s#/$##')
-          echo "//${repo_host}/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
-          echo "//${repo_host}/repository/npm-private/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
-          echo "//${repo_host}/repository/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+          # Only add auth entries for private hosts; don't override the public registry.
+          if [ -n "${{ secrets.NPM_REPO }}" ]; then
+            repo_host=$(echo "${{ secrets.NPM_REPO }}" | sed -E 's#https?://##; s#/$##')
+            echo "//${repo_host}/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+            echo "//${repo_host}/repository/npm-private/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc || true
+            echo "//${repo_host}/repository/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc || true
+          fi
           if [ -n "${{ secrets.NPM_REPO_ALT }}" ]; then
             alt_host=$(echo "${{ secrets.NPM_REPO_ALT }}" | sed -E 's#https?://##; s#/$##')
             echo "//${alt_host}/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
-            echo "//${alt_host}/repository/npm-private/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
-            echo "//${alt_host}/repository/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+            echo "//${alt_host}/repository/npm-private/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc || true
+            echo "//${alt_host}/repository/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc || true
           fi
-          echo "always-auth=true" >> ~/.npmrc
-      - name: Install dependencies (bun)
-        run: bun install
-      - name: Build site (bun)
-        run: bun run build
+          if grep -q ':_authToken' ~/.npmrc 2>/dev/null; then
+            echo "always-auth=true" >> ~/.npmrc
+          fi
+      - name: Install dependencies
+        run: npm ci
+      - name: Build site
+        run: npm run build
