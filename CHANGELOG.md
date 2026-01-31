@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/sstreichan/DJing/compare/v1.2.0...v1.3.0) (2026-01-31)
+
+
+### Features
+
+* enhance text colors for better contrast in dark mode ([6e5dc40](https://github.com/sstreichan/DJing/commit/6e5dc4087c9af65fb0adf3dabc19967ab8101832))
+* improve text contrast for dark mode and enhance navigation styles ([33b6041](https://github.com/sstreichan/DJing/commit/33b6041a536e882bd497c32aee813e01f0b9dc6d))
+
 # [1.2.0](https://github.com/sstreichan/DJing/compare/v1.1.0...v1.2.0) (2026-01-31)
 
 
