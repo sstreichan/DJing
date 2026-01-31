@@ -21,17 +21,20 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies (bun optional)
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies (bun)
         run: |
-          npm ci
+          bun install
 
       - name: Run semantic-release (version, changelog, release)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
 
-      - name: Build site
-        run: npm run build
+      - name: Build site (bun)
+        run: bun run build
 
       - name: Deploy to GitHub Pages
         uses: actions/configure-pages@v4
