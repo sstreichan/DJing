@@ -4,6 +4,9 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+  // Base and site are required for proper GitHub Pages deployment
+  base: '/DJing',
+  site: 'https://sstreichan.github.io',
   integrations: [
     starlight({
       title: 'DJ-Anleitung',

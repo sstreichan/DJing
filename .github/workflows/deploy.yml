@@ -1,0 +1,45 @@
+name: Deploy to GitHub Pages & Release
+
+on:
+  push:
+    branches: [ master ]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  release-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies (bun optional)
+        run: |
+          npm ci
+
+      - name: Run semantic-release (version, changelog, release)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
+
+      - name: Build site
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact to Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./dist
+
+      - name: Publish Pages
+        uses: actions/deploy-pages@v1
