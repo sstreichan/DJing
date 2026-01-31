@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/sstreichan/DJing/compare/v1.3.0...v1.4.0) (2026-01-31)
+
+
+### Features
+
+* added images ([7ead631](https://github.com/sstreichan/DJing/commit/7ead6317d92190e181ce46e591dc90042872e80a))
+
 # [1.3.0](https://github.com/sstreichan/DJing/compare/v1.2.0...v1.3.0) (2026-01-31)
 
 
