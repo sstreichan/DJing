@@ -1,3 +1,22 @@
+# 1.0.0 (2026-01-31)
+
+
+### Bug Fixes
+
+* **ci:** correct YAML indentation for steps: in deploy.yml ([a68c659](https://github.com/sstreichan/DJing/commit/a68c6593ee0e6da35d5ed29297353e385cc45144))
+* **ci:** correct YAML indentation for workflow steps ([5bf45ab](https://github.com/sstreichan/DJing/commit/5bf45ab98461c063ff1e537c87b7e8ca262e39f2))
+* **ci:** correct YAML indentation in deploy workflow ([8768e97](https://github.com/sstreichan/DJing/commit/8768e9724382ce80da2c900a67aa7f55de80e3e8))
+* **ci:** make registry auth safer for public registry resolution ([fe13aec](https://github.com/sstreichan/DJing/commit/fe13aeca1f8a775c7ca71b195ba2b3456f87f108))
+* **ci:** revert to Bun-first CI to match project setup; fix indentation ([3e9c2bc](https://github.com/sstreichan/DJing/commit/3e9c2bc8803cbda66cdf0975a72f1f4cc41634a1))
+* **ci:** update registry authentication configuration for npm ([7651dc8](https://github.com/sstreichan/DJing/commit/7651dc8bde71e888753b9fd69d9e52bbfe4896f4))
+* **config:** remove defaultLocale and editLink from Starlight integration ([e33436e](https://github.com/sstreichan/DJing/commit/e33436eea180f538c6e41738e15afa9f1ca26916))
+
+
+### Features
+
+* **ci:** add registry authentication configuration for Bun ([417a07d](https://github.com/sstreichan/DJing/commit/417a07d79f018fcc0eaef9f28ab2f85e96c9d115))
+* **docs:** add Starlight docs, migrate docs -> src/content/docs, remove legacy pages/components/layouts, add content.config.ts ([ba9cb30](https://github.com/sstreichan/DJing/commit/ba9cb30d5e9e434f13744e39d692000d486f4fae))
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
