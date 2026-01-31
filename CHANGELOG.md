@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/sstreichan/DJing/compare/v1.4.0...v1.4.1) (2026-01-31)
+
+
+### Bug Fixes
+
+* update image assets for improved quality ([3186b70](https://github.com/sstreichan/DJing/commit/3186b700a1a5ab4ad20aa7f85f4a51e6de65b02e))
+
 # [1.4.0](https://github.com/sstreichan/DJing/compare/v1.3.0...v1.4.0) (2026-01-31)
 
 
