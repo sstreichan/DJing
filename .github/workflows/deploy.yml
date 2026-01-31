@@ -24,35 +24,17 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Configure registry auth
+      - name: Install dependencies (npm)
         run: |
-          # Only add auth entries for private hosts; don't override the public registry.
-          if [ -n "${{ secrets.NPM_REPO }}" ]; then
-            repo_host=$(echo "${{ secrets.NPM_REPO }}" | sed -E 's#https?://##; s#/$##')
-            echo "//${repo_host}/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
-            echo "//${repo_host}/repository/npm-private/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc || true
-            echo "//${repo_host}/repository/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc || true
-          fi
-          if [ -n "${{ secrets.NPM_REPO_ALT }}" ]; then
-            alt_host=$(echo "${{ secrets.NPM_REPO_ALT }}" | sed -E 's#https?://##; s#/$##')
-            echo "//${alt_host}/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
-            echo "//${alt_host}/repository/npm-private/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc || true
-            echo "//${alt_host}/repository/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc || true
-          fi
-          if grep -q ':_authToken' ~/.npmrc 2>/dev/null; then
-            echo "always-auth=true" >> ~/.npmrc
-          fi
-
-      - name: Install dependencies
-        run: bun install
+          npm ci
 
       - name: Run semantic-release (version, changelog, release)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: bunx semantic-release
+        run: npx semantic-release
 
-      - name: Build site
-        run: bun run build
+      - name: Build site (npm)
+        run: npm run build
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v4
