@@ -7,7 +7,7 @@ sidebar:
 hero:
   title: |
     DJ-Anleitung
-    <span style="background: linear-gradient(135deg, #9d4edd, #c77dff);
+    <span style="background: linear-gradient(135deg, #0052CC, #00296B);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;">
@@ -36,7 +36,7 @@ Diese Anleitung führt dich durch alle wichtigen Aspekte des DJings - strukturie
 - 💪 **Praxis**: Übungen und Training für deinen DJ-Alltag
 
 ---
-
+<!-- 
 ## Inhaltsübersicht
 
 - [Grundlagen](01-grundlagen.md)
@@ -45,4 +45,5 @@ Diese Anleitung führt dich durch alle wichtigen Aspekte des DJings - strukturie
 - [Mixing-Techniken](04-mixing-techniken.md)
 - [Zusätzliche Techniken](05-zusaetzliche-techniken.md)
 - [Stilbezogene Tipps](06-stilbezogene-tipps.md)
-- [Praxis & Training](07-praxis-training.md)
+- [Praxis & Training](07-praxis-training.md) 
+-->

@@ -136,6 +136,16 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
+/* Ensure high contrast for headings in dark mode */
+:root[data-theme='dark'] h1,
+:root[data-theme='dark'] h2,
+:root[data-theme='dark'] h3,
+:root[data-theme='dark'] h4,
+:root[data-theme='dark'] h5,
+:root[data-theme='dark'] h6 {
+  color: #FFFFFF;
+}
+
 h1 {
   font-size: var(--sl-text-5xl);
   margin-bottom: 1.5rem;
@@ -201,8 +211,69 @@ a:focus-visible {
 }
 
 /* ========================================
-   Navigation & Sidebar
-   ======================================== */
+    Navigation & Sidebar
+    ======================================== */
+
+/* Fix navigation text colors in light mode */
+nav, .nav, .header, .top-nav {
+  color: var(--sl-color-black);
+}
+
+nav a, .nav a, .header a, .top-nav a {
+  color: var(--sl-color-accent);
+}
+
+/* Ensure proper text contrast in header/navigation areas */
+.header, nav, .top-bar, .navbar {
+  background-color: var(--sl-color-white);
+  color: var(--sl-color-black);
+}
+
+/* Fix Starlight header elements */
+.sl-header, .sl-nav, .sl-header-content {
+  color: var(--sl-color-black);
+}
+
+.sl-header a, .sl-nav a {
+  color: var(--sl-color-accent);
+}
+
+/* Fix ALL navigation text in light mode - comprehensive approach */
+.sl-nav, .sl-nav-menu, .sl-nav-item, .sl-nav-link {
+  color: var(--sl-color-black) !important;
+}
+
+.sl-nav a, .sl-nav-menu a, .sl-nav-item a, .sl-nav-link {
+  color: var(--sl-color-accent) !important;
+}
+
+/* Fix header content and breadcrumbs */
+.sl-header-content, .sl-breadcrumbs {
+  color: var(--sl-color-black);
+}
+
+.sl-breadcrumbs a {
+  color: var(--sl-color-accent);
+}
+
+/* Force all header text to be visible in light mode */
+.sl-header *, .sl-nav *, .header *, nav * {
+  color: var(--sl-color-black);
+}
+
+.sl-header a *, .sl-nav a *, .header a *, nav a * {
+  color: var(--sl-color-accent);
+}
+
+/* Fix theme toggle and search elements in upper right */
+.theme-toggle, .search-toggle, .sl-theme-toggle, .sl-search-toggle {
+  color: var(--sl-color-black);
+  background-color: var(--sl-color-white);
+}
+
+.theme-toggle:hover, .search-toggle:hover, .sl-theme-toggle:hover, .sl-search-toggle:hover {
+  color: var(--sl-color-accent);
+}
 
 /* Sidebar - Subtle Gradient Background */
 .sidebar {
