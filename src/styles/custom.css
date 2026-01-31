@@ -84,6 +84,10 @@
   --sl-color-bg-nav: #151A23;
   --sl-color-bg-sidebar: #151A23;
   
+  /* === Text Colors for Better Contrast === */
+  --sl-color-text: #E5E7EB;
+  --sl-color-text-accent: #2196F3;
+  
   /* === Dark Mode Borders & Shadows === */
   --sl-color-hairline-light: #151A23;
   --sl-color-hairline: #1F2937;
@@ -155,6 +159,14 @@ h3 {
 p {
   line-height: 1.7;
   margin-bottom: 1.25rem;
+}
+
+/* Ensure good contrast in dark mode for body text */
+:root[data-theme='dark'] p,
+:root[data-theme='dark'] li,
+:root[data-theme='dark'] td,
+:root[data-theme='dark'] .sl-markdown-content {
+  color: var(--sl-color-gray-6);
 }
 
 /* Strong Text - Use Accent Color */
