@@ -15,6 +15,12 @@ jobs:
           node-version: '20'
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
+      - name: Configure registry auth
+        run: |
+          echo "registry=${{ secrets.NPM_REPO }}" > ~/.npmrc
+          repo_host=$(echo "${{ secrets.NPM_REPO }}" | sed -E 's#https?://##; s#/$##')
+          echo "//${repo_host}/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+          echo "always-auth=true" >> ~/.npmrc
       - name: Install dependencies (bun)
         run: bun install
       - name: Build site (bun)
