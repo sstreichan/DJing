@@ -1,36 +1,69 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" role="img" aria-label="Signalfluss: Mediaplayer zu Mixer zu Lautsprechern">
-  <rect width="100%" height="100%" fill="#0f1115"/>
-  <g font-family="Inter, Arial, sans-serif" font-size="18" fill="#e8edf2">
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="deviceGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f3ecff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e8dfff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#9d4edd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c77dff;stop-opacity:1" />
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d4edd"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#faf9ff"/>
+  
+  <!-- Title -->
+  <g font-family="Inter, Arial, sans-serif" font-size="18" fill="#2d1b4e">
     <text x="40" y="40" font-size="22" font-weight="700">Signalfluss (Denon DN-S1200 → Denon DN-X120)</text>
   </g>
-  <g fill="#1f2430" stroke="#4aa3ff" stroke-width="2">
-    <rect x="60" y="90" width="220" height="120" rx="12"/>
-    <rect x="360" y="90" width="220" height="120" rx="12"/>
-    <rect x="660" y="90" width="220" height="120" rx="12"/>
+  
+  <!-- Device Boxes -->
+  <g>
+    <!-- Mediaplayer -->
+    <rect x="60" y="90" width="220" height="120" rx="12" fill="url(#deviceGradient)" stroke="#9d4edd" stroke-width="3"/>
+    <!-- Mixer -->
+    <rect x="360" y="90" width="220" height="120" rx="12" fill="url(#deviceGradient)" stroke="#9d4edd" stroke-width="3"/>
+    <!-- Speakers -->
+    <rect x="660" y="90" width="220" height="120" rx="12" fill="url(#deviceGradient)" stroke="#9d4edd" stroke-width="3"/>
   </g>
-  <g font-family="Inter, Arial, sans-serif" font-size="18" fill="#e8edf2" text-anchor="middle">
+  
+  <!-- Device Labels -->
+  <g font-family="Inter, Arial, sans-serif" font-size="18" fill="#2d1b4e" text-anchor="middle">
     <text x="170" y="140" font-weight="700">DN-S1200</text>
-    <text x="170" y="170">Mediaplayer</text>
+    <text x="170" y="170" font-weight="500" fill="#6b5b7b">Mediaplayer</text>
     <text x="470" y="140" font-weight="700">DN-X120</text>
-    <text x="470" y="170">Mixer</text>
+    <text x="470" y="170" font-weight="500" fill="#6b5b7b">Mixer</text>
     <text x="770" y="140" font-weight="700">PA / Monitore</text>
-    <text x="770" y="170">Lautsprecher</text>
+    <text x="770" y="170" font-weight="500" fill="#6b5b7b">Lautsprecher</text>
   </g>
-  <g stroke="#7dd3fc" stroke-width="3" fill="none" marker-end="url(#arrow)">
+  
+  <!-- Signal Flow Arrows -->
+  <g stroke="url(#arrowGradient)" stroke-width="4" fill="none" marker-end="url(#arrow)">
     <line x1="280" y1="150" x2="360" y2="150"/>
     <line x1="580" y1="150" x2="660" y2="150"/>
   </g>
-  <g font-family="Inter, Arial, sans-serif" font-size="14" fill="#b7c2cc" text-anchor="middle">
+  
+  <!-- Connection Labels -->
+  <g font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#9d4edd" text-anchor="middle">
     <text x="320" y="135">RCA Line</text>
     <text x="620" y="135">Master Out</text>
   </g>
-  <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7dd3fc"/>
-    </marker>
-  </defs>
-  <g font-family="Inter, Arial, sans-serif" font-size="14" fill="#a6b1bb">
+  
+  <!-- Info Notes -->
+  <g font-family="Inter, Arial, sans-serif" font-size="14" font-weight="500" fill="#6b5b7b">
     <text x="60" y="260">Hinweis: Jede Seite (Player 1/2) per Line-In in einen Mixer-Kanal.</text>
     <text x="60" y="285">Kopfhörer am Mixer (Phones) für Vorhören.</text>
+  </g>
+  
+  <!-- Accent Icons -->
+  <g fill="#ff6b35">
+    <circle cx="170" cy="100" r="4"/>
+    <circle cx="470" cy="100" r="4"/>
+    <circle cx="770" cy="100" r="4"/>
   </g>
 </svg>
