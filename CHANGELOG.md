@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/sstreichan/DJing/compare/v1.4.2...v1.4.3) (2026-02-07)
+
+
+### Bug Fixes
+
+* update link format for action in DJ guide ([b599c2d](https://github.com/sstreichan/DJing/commit/b599c2d760305d57954b3fdb563c27a3d480b6de))
+
 ## [1.4.2](https://github.com/sstreichan/DJing/compare/v1.4.1...v1.4.2) (2026-02-07)
 
 
