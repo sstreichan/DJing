@@ -36,7 +36,7 @@ Die **richtige Verkabelung** ist fundamental. Fehler hier kosten dich Sound-Qual
 
 ### Schritt-für-Schritt Verkabelung
 
-![DJ Setup Verbindungen](images/0755b2f8-aec4-4523-8dda-e888b17dcce3.png)
+![DJ Setup Verbindungen](https://via.placeholder.com/800x400?text=DJ+Setup+Verbindungen)
 
 **Schritt 1: Media Player anschließen**
 
@@ -130,7 +130,7 @@ Viele Anfänger ignorieren das und erhalten schlechte Ergebnisse.
 
 ### Schritt-für-Schritt Gain-Staging
 
-![Richtige Pegel-Einstellung](images/e388e5da-e1f3-4a85-a342-99311163f772.png)
+![Richtige Pegel-Einstellung](https://via.placeholder.com/800x400?text=Richtige+Pegel-Einstellung)
 
 **Schritt 1: Track laden**
 

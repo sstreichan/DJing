@@ -91,7 +91,7 @@ Professionelle elektronische Musik folgt einem bewährten Schema. Das Verständn
 
 ### Typischer Track-Aufbau (4-5 Minuten)
 
-![DJ Song Structure](images/4c86936d-b298-4f07-b2ea-507895e67832.png)
+![DJ Song Structure](https://via.placeholder.com/800x400?text=DJ+Song+Structure)
 
 **1. Intro (8-16 Bars)**
 - Der Track beginnt meist mit minimalem Inhalt
