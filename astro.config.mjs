@@ -9,17 +9,10 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "DJ-Anleitung",
-      social: [
-        {
-          icon: "github",
-          label: "GitHub",
-          href: "https://github.com/sstreichan/DJing",
-        },
-      ],
       sidebar: [
         {
           label: "Inhalt",
-          autogenerate: { directory: "docs" },
+          autogenerate: { directory: "src/content/docs" },
         },
       ],
     }),
