@@ -9,12 +9,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "DJ-Anleitung",
-      sidebar: [
-        {
-          label: "Inhalt",
-          autogenerate: { directory: "src/content/docs" },
-        },
-      ],
+      // Use Starlight's default sidebar generation from the `docs` collection
     }),
   ],
 });
