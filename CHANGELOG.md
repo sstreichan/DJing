@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/sstreichan/DJing/compare/v1.4.3...v1.4.4) (2026-02-07)
+
+
+### Bug Fixes
+
+* update sidebar autogenerate directory and remove social links ([a4cbb6b](https://github.com/sstreichan/DJing/commit/a4cbb6bc9aa96f38e797a0c052a5eb476d92e053))
+
 ## [1.4.3](https://github.com/sstreichan/DJing/compare/v1.4.2...v1.4.3) (2026-02-07)
 
 
