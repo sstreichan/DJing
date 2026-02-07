@@ -25,6 +25,13 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Set up .npmrc for private packages
+        run: |
+          cat > ~/.npmrc <<EOF
+          //nexus.senseaition.com/repository/npm-private/:_authToken=${{ secrets.NPM_TOKEN }}
+          //nexus.senseaition.com/repository/npm/:_authToken=${{ secrets.NPM_TOKEN }}
+          EOF
+
       - name: Install dependencies (npm)
         run: |
           npm ci
