@@ -1,24 +1,8 @@
 ---
 title: DJ-Anleitung für Einsteiger
 description: Deine komplette Anleitung zum DJing - von den Grundlagen bis zu fortgeschrittenen Mixing-Techniken
-template: splash
 sidebar:
   order: 0
-hero:
-  title: |
-    DJ-Anleitung
-    <span style="background: linear-gradient(135deg, #0052CC, #00296B);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;">
-    für Einsteiger
-    </span>
-  tagline: Lerne die Kunst des DJings - von Beatmatching und EQ-Mixing bis zu fortgeschrittenen Techniken. Eine Schritt-für-Schritt-Anleitung für absolute Anfänger.
-  actions:
-    - text: Los geht's
-      link: ./01-grundlagen/
-      icon: right-arrow
-      variant: primary
 ---
 
 ## Willkommen zur DJ-Anleitung
