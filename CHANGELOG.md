@@ -1,3 +1,10 @@
+## [1.4.5](https://github.com/sstreichan/DJing/compare/v1.4.4...v1.4.5) (2026-02-07)
+
+
+### Bug Fixes
+
+* remove custom sidebar configuration to use default generation ([bb816b5](https://github.com/sstreichan/DJing/commit/bb816b5783c914fed8d92486e3c39d49bca4a16a))
+
 ## [1.4.4](https://github.com/sstreichan/DJing/compare/v1.4.3...v1.4.4) (2026-02-07)
 
 
