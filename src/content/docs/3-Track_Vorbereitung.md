@@ -107,7 +107,7 @@ Professionelle DJs setzen systematisch Cue-Punkte für jeden Track.
 
 ### Die perfekte Cue-Punkt-Strategie
 
-![Cue-Punkte Strategie](images/0f606bfb-c42d-4053-8dc1-3f6e18cf3a4d.png)
+![Cue-Punkte Strategie](https://via.placeholder.com/800x400?text=Cue-Punkte+Strategie)
 
 **1. Main Cue (Gelb/Standard)**
 - Setze ihn am **ersten starken Beat** des Tracks

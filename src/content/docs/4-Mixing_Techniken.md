@@ -19,7 +19,7 @@ Ohne das schaffst du keine guten Übergänge.
 
 ### Die 5 Schritte zum Beatmatching
 
-![Manuelles Beatmatching](images/a0d894cf-4845-4a19-abc8-744250856025.png)
+![Manuelles Beatmatching](https://via.placeholder.com/800x400?text=Manuelles+Beatmatching)
 
 **Schritt 1: Höre die Master-BPM**
 
@@ -109,7 +109,7 @@ Das ist eine **massive Reichweite**.
 
 Dies ist die Standard-Technik für lange, sanfte Übergänge (z.B. in Progressive House):
 
-![EQ-Mixing für Übergänge](images/8eb14f72-1478-495d-8ee8-3c7565f0e385.png)
+![EQ-Mixing für Übergänge](https://via.placeholder.com/800x400?text=EQ-Mixing+f%C3%BCr+%C3%9Cberg%C3%A4nge)
 
 **Phase 1: Vorbereitung** (vor dem Mix)
 

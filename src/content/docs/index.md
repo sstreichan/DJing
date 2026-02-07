@@ -16,7 +16,7 @@ hero:
   tagline: Lerne die Kunst des DJings - von Beatmatching und EQ-Mixing bis zu fortgeschrittenen Techniken. Eine Schritt-für-Schritt-Anleitung für absolute Anfänger.
   actions:
     - text: Los geht's
-      link: /DJing/01-grundlagen/
+      link: /01-grundlagen/
       icon: right-arrow
       variant: primary
 ---
